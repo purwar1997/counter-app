@@ -9,4 +9,8 @@
 
 A simple DOM project where user can play with the score value. This app has three buttons which can be used to increase, decrease and reset the score value. This project is created using HTML, CSS and Javascript.
 
+### Preview of the project :-
+
+![Preview](./preview.png)
+
 ### [Live link](https://counter-app-f988.vercel.app/) of the project
