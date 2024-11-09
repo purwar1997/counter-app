@@ -1,28 +1,20 @@
-const span = document.querySelector('#value');
-const buttons = document.querySelectorAll('.btn');
+const span = document.getElementById('counter');
+const counter = Number(span.innerText);
 
-let score = Number(span.innerText);
+const increaseBtn = document.getElementById('increase');
+const decreaseBtn = document.getElementById('decrease');
+const resetBtn = document.getElementById('reset');
 
-const updateScore = event => {
-  const btnClass = event.target.classList;
+increaseBtn.addEventListener('click', () => {
+  const counter = Number(span.innerText);
+  span.innerText = counter + 1;
+});
 
-  if (btnClass.contains('decrease')) {
-    score = score - 1;
-  } else if (btnClass.contains('reset')) {
-    score = 0;
-  } else {
-    score = score + 1;
-  }
+decreaseBtn.addEventListener('click', () => {
+  const counter = Number(span.innerText);
+  span.innerText = counter - 1;
+});
 
-  if (score < 0) {
-    span.style.color = '#D82E2F';
-  } else if (score === 0) {
-    span.style.color = '#333';
-  } else {
-    span.style.color = '#008000';
-  }
-
-  span.innerText = score;
-};
-
-buttons.forEach(btn => btn.addEventListener('click', updateScore));
+resetBtn.addEventListener('click', () => {
+  span.innerText = 0;
+});
